@@ -22,7 +22,14 @@
     "typescript": "^1.8.9"
   },
   "dependencies": {
+    "angular2": "^2.0.0-beta.14",
+    "ejs": "^2.4.1",
+    "es6-shim": "^0.35.0",
     "express": "^4.13.4",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "reflect-metadata": "^0.1.2",
+    "rxjs": "^5.0.0-beta.2",
+    "systemjs": "^0.19.25",
+    "zone.js": "^0.6.6"
   }
 }

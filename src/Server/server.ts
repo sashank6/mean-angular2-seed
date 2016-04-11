@@ -8,13 +8,23 @@ let port: number = process.env.PORT || 3000;
 let app = express();
 
 
-app.use("/node_modules",express.static(path.resolve(__dirname,'../../node_modules')));
 
+app.set('views','./src/Client/Views');
+app.set('view engine','ejs');
+app.engine('html', require('ejs').renderFile);
+
+
+app.use("/node_modules",express.static(path.resolve(__dirname,'../../node_modules')));
+app.use("/app",express.static(path.resolve(__dirname,'../Client/app')));
+
+app.use("/*.html",function(req,res){
+    res.render(req.params[0]+".html");
+});
 
 app.get('/',function(req:express.Request,res:express.Response){
 
 
-		res.send("Express and Node is Setup");
+		res.render('index.html');
 });
 
 
